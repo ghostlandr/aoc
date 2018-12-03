@@ -2,6 +2,13 @@
 
 I found I was doing the exact same thing to start every day of Advent of Code, so I figured I could automate it.
 
+## What does it do?
+
+It creates a new folder in the current directory called d1 (if you're starting day 1). It will also create three new
+files inside of that directory. `input.txt`, where you should put your puzzle input. `part1.<extension>` and `part2.<extension>`
+where your code should go. In the part files it will setup an appropriate starting template that will read in the 
+`input.txt` file and print each line of it. This is to get you started as I found I was doing this every day of AoC.
+
 ## Installation
 
 `go get github.com/gholtslander-va/aoc`

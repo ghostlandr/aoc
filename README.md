@@ -19,7 +19,7 @@ Go to the folder you are doing your Advent of Code in and run
 
 `aoc start <day number>`
 
-If you are using Golang, it will generate go by default. If you want something else, use the language flag:
+If you are using Golang, great! It will generate go by default. If you want something else, use the language flag:
 
 `aoc start <day number> -l python`
 

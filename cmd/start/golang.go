@@ -33,7 +33,7 @@ func main() {
 	data, _ := ioutil.ReadFile("{{.Dir}}/input.txt")
 	stringData := strings.Split(string(data), "\n")
 
-	for s := range stringData {
+	for _, s := range stringData {
 		fmt.Println(s)
 	}
 }

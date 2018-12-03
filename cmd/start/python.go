@@ -1,10 +1,3 @@
-package start
-
-import (
-	"fmt"
-	"os"
-)
-
 // Copyright © 2018 Graham Holtslander <menello@gmail.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,36 +21,26 @@ import (
 )
 
 const (
-	dayTemplate = `package main
+	pythonTemplate = `""" Advent of Code """
 
-import (
-	"fmt"
-	"io/ioutil"
-	"strings"
-)
+def main():
+    """ Process advent of code """
+    parts = open('./input.txt')
+    for part in parts:
+        print part,
 
-func main() {
-	data, _ := ioutil.ReadFile("{{.Dir}}/input.txt")
-	stringData := strings.Split(string(data), "\n")
-
-	for s := range stringData {
-		fmt.Println(s)
-	}
-}
+if __name__ == '__main__':
+    main()
 `
 )
 
-type Directory struct {
-	Dir string
-}
-
 func GeneratePythonFiles(dayFolder string) {
-	tmpl, err := template.New("code").Parse(dayTemplate)
+	tmpl, err := template.New("code").Parse(pythonTemplate)
 	if err != nil {
 		fmt.Printf("failed to create code template: %s\n", err)
 		return
 	}
-	f, err := os.OpenFile(fmt.Sprintf("./%s/part1.go", dayFolder), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	f, err := os.OpenFile(fmt.Sprintf("./%s/part1.py", dayFolder), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Printf("failed to open file %s\n", err)
 		return
@@ -76,7 +59,7 @@ func GeneratePythonFiles(dayFolder string) {
 		fmt.Printf("failed to close file %s\n", err)
 		return
 	}
-	f2, err := os.OpenFile(fmt.Sprintf("./%s/part2.go", dayFolder), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	f2, err := os.OpenFile(fmt.Sprintf("./%s/part2.py", dayFolder), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Printf("failed to open file %s\n", err)
 		return

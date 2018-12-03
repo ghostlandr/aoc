@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	dayTemplate = `package main
+	goTemplate = `package main
 
 import (
 	"fmt"
@@ -45,7 +45,7 @@ type Directory struct {
 }
 
 func GenerateGoFiles(dayFolder string) {
-	tmpl, err := template.New("code").Parse(dayTemplate)
+	tmpl, err := template.New("code").Parse(goTemplate)
 	if err != nil {
 		fmt.Printf("failed to create code template: %s\n", err)
 		return

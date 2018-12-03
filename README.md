@@ -1,4 +1,4 @@
-# aoc - Advent of Code scaffolding generator 
+# aoc - Advent of Code scaffolding generator
 
 I found I was doing the exact same thing to start every day of Advent of Code, so I figured I could automate it.
 
